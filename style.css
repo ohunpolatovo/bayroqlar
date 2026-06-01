@@ -1,0 +1,129 @@
+
+:root {
+    --bg-color: hsl(0, 0%, 98%);
+    --element-bg: hsl(0, 0%, 100%);
+    --text-color: hsl(200, 15%, 8%);
+    --input-color: hsl(0, 0%, 52%);
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode {
+    --bg-color: hsl(207, 26%, 17%);
+    --element-bg: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 0%, 100%);
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Nunito Sans', sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+.header {
+    background-color: var(--element-bg);
+    box-shadow: var(--box-shadow);
+    padding: 23px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* header nav=================================== */
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.theme-toggle{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+}
+.dark-moon{
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    color:var(--text-color) ;
+}
+.logo{
+    color:var(--text-color);
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 100%;
+}
+.text{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color:var(--text-color);
+}
+/* search ======================================= */
+.controls-section {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-top: 48px;
+}
+
+.search-box {
+      display: flex;
+    align-items: center;
+    gap: 24px;
+    border: none;
+    padding: 18px;
+    box-shadow: 0px 0px 5px 0px #000000;
+    border-radius: 10px;
+    input{
+        border: none;
+        outline: none;
+        color:var(--text-color); 
+    }
+    i{
+        color:var(--text-color); ;
+    }
+}
+
+.filter-box {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    max-width: 200px;
+    box-shadow: 0px 0px 5px 0px #000000;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color:var(--text-color)
+}
+/* responsive========================================== */
+@media(max-width:500px){
+    .header-content{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .controls-section{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .filter-box{
+        width: auto;
+        padding: 10px;
+    }
+    .search-box{
+        width: 100%;
+        padding: 10px;
+    }
+}

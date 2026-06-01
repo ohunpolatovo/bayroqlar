@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Countries </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-<h1>salom dunyo</h1>
-    <script src="./script.js"></script>
+    <header class="header"  >
+        <div class="header-content  container ">
+            <!-- sahifa -->
+            <h1 class="logo">Where in the world?</h1>
+            <!-- dark mode -->
+            <div class="theme-togle">
+                <button id="theme-togle" class="dark-moon">
+                    <i  class="fa-regular fa-moon"></i>
+                </button>
+                <span class="text">Dark Mode</span>
+            </div>
+         </div>
+    </header>
+    <!-- content -->
+    <main class="main">
+        <!-- search parent -->
+        <div class="controls-section container">
+            <!-- search -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search for a country...">
+            </div>
+     <!-- filter select -->
+            <div>
+                <select class="filter-box" id="region-filter">
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+        </div>
+        <!-- countries flags -->
+        <div class="countries-grid" id="countries-container"></div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
