@@ -125,7 +125,7 @@ function displayCountries(data) {
             <div class="country-card">
                 <img src="${country.flag}" alt="${country.name} flag" class="country-flag">
                 <div class="country-info">
-                    <h2 class="country-name">${country.name}</h2>
+                     <h2 class="country-name">${country.name}</h2>
                     <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
                     <p><strong>Region:</strong> ${country.region}</p>
                     <p><strong>Capital:</strong> ${country.capital}</p>
@@ -142,3 +142,12 @@ displayCountries(countries);
 document.getElementById('theme-btn').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
+const searchIn = document.querySelector("#search-input");
+searchIn.addEventListener("input", (event) => {
+  const qidiruvMatni = event.target.value.toLowerCase(); 
+ const filtrlanganDavlatlar = countries.filter(country => {
+    return country.name.toLowerCase().includes(qidiruvMatni);
+  });
+  displayCountries(filtrlanganDavlatlar);
+});
+
