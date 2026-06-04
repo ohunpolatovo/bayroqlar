@@ -142,6 +142,23 @@ displayCountries(countries);
 document.getElementById('theme-btn').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
+
+// region filter
+const selectEl = document.querySelector("#region-filter");
+
+selectEl.addEventListener("change", (e) => {
+  const tanlanganSel = e.target.value; 
+  if (tanlanganSel === "all" || tanlanganSel === "") {
+    displayCountries(countries);
+  } else {
+    const filtrlanganMintaqa = countries.filter(country => {
+      return country.region === tanlanganSel; 
+    });
+    displayCountries(filtrlanganMintaqa);
+  }
+});
+
+//search input
 const searchIn = document.querySelector("#search-input");
 searchIn.addEventListener("input", (event) => {
   const qidiruvMatni = event.target.value.toLowerCase(); 
